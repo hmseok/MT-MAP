@@ -38,7 +38,10 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        timeout: 60s
         script: |
+          echo "Starting deployment..."
           cd /home/ubuntu/MT-MAP
           git pull origin main
           cd backend
@@ -46,3 +49,4 @@ jobs:
           sudo systemctl stop accident-factory || true
           sudo systemctl start accident-factory
           sudo systemctl status accident-factory
+          echo "Deployment completed!"
