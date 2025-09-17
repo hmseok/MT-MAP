@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: accident-factory
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/accident_factory?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: accident_user
+    password: accident_password123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: false
+  
+  security:
+    user:
+      name: admin
+      password: admin123
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.kakaomap.accidentfactory: INFO
+    org.springframework.security: WARN
+    org.springframework.web: INFO
