@@ -15,7 +15,7 @@ public class HealthController {
     public Map<String, Object> health() {
         Map<String, Object> response = new HashMap<>();
         response.put("status", "UP");
-        response.put("message", "카카오맵 사고공장 API 서버가 정상적으로 실행 중입니다. (자동 배포 테스트)");
+        response.put("message", "카카오맵 사고공장 API 서버가 정상적으로 실행 중입니다. (GitHub Actions 배포 테스트 - " + new java.util.Date() + ")");
         response.put("timestamp", System.currentTimeMillis());
         return response;
     }
